@@ -236,7 +236,7 @@ El diseño se inspiro de igual forma en otra herramienta previamente instalada e
 
 Observando el diseño, se optó por realizar un ensamblaje de dos partes: una fija a la punta del robot atornillada a este, con un orificio en la punta por donde se acoplaría la otra parte por rosca y pasaría el cable del electroimán conectado a su circuito de control por dentro del tornillo sin fin aprovechando su espacio hueco. Se realiza en dos partes para facilitar el ensamblaje rápido de este, y así agilizar tiempos de desacople y acople en realizaciones futuras por posibles fallos, entre otros motivos.
 
-A continuación se muestran imágenes de las partes del ensamblaje de Inventor con su respectivo modelado del electroimán y las dos partes de acople por rosca; de igual forma, se muestra el ensamblaje final y su manufactura en impresión 3D ya atornillada al robot.
+A continuación se muestran imágenes de las partes del ensamblaje de Inventor con su respectivo modelado del electroimán y las dos partes de acople por rosca; de igual forma, se muestra el ensamblaje final 
 
 <p  align="center">
   <img src="images/Iman.png" alt="Iman.png" width="450" style="border: none !important; box-shadow: none !important;">
@@ -248,6 +248,9 @@ A continuación se muestran imágenes de las partes del ensamblaje de Inventor c
   <img src="images/Hembra.png" alt="Hembra" width="450" style="border: none !important; box-shadow: none !important;">
   <img src="images/Ensamble.png" alt="Ensamble" width="450" style="border: none !important; box-shadow: none !important;">
 </p>
+
+Se presenta tambien su manufactura en impresión 3D ya atornillada a la punta del robot como su versión final y despegado de este para ver la sección interna y su cable  :
+
 
 
 
