@@ -457,9 +457,6 @@ Se presenta tambien su manufactura en impresión 3D ya atornillada a la punta de
 
 
 
-
-
-
 ## 4. Simulación
 En el siguiente video se encuentra el desarrollo de la simulación con la interfaz 
 
