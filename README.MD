@@ -238,8 +238,6 @@ Estas funciones utilizan las instrucciones `SimSet` para asociar o liberar el mo
 
 La utilización de procedimientos independientes para esta tarea permite desacoplar la simulación del control físico del robot, facilitando tanto las pruebas virtuales como la posterior implementación sobre el equipo real.
 
-> **[Agregen foto de la simulación]:** *Adjuntar captura de pantalla de la simulación en EPSON RC+ con la malla de paletizado generada.*
-
 ![Video de la simulación con interfaz](https://drive.google.com/file/d/1CKHcbSbyM-2wsqahP0qlyPA7baEbvKEz/view?usp=drive_link)
 
 ![Resultado de los componentes en la baquela de simulación](images/componentes-en-baquela-simu.jpeg)
