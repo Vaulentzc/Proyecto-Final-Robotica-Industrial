@@ -207,27 +207,35 @@ Se diseño el gripper para los componentes electronicos en torno a un sistema el
 | **P34/25** | 34 mm | 25 mm | 20.0 – 25.0 kg (200–250 N) | ~5 W | ~0.42 A | M4 / M5 |
 | **P40/20** | 40 mm | 20 mm | 25.0 – 30.0 kg (250–300 N) | ~8 W | ~0.67 A | M5 |
 
-con base a sus caracteristicas fisicas y a una herramienta previamente enseñada como inspiraciòn se procedio a hacer el soporte de dicho electroiman 
-
-<p align="center">
-  <img src="images/ImanLateral.jpeg" alt="ImanLateral" width="450">
-</p>
-
-<p align="center">
-  <img src="images/ImanSuperior.jpeg" alt="ImanSuperior" width="450">
-</p>
+con base a sus caracteristicas fisicas y a una herramienta previamente enseñada como inspiraciòn se procedio a hacer el soporte de dicho electroiman, a continuaciòn se presenta dicho gripper encontrado en el robot :
 
 <p align="center">
   <img src="images/InspiraciònHerramienta.jpeg" alt="InspiraciònHerramienta" width="450">
 </p>
 
-<p align="center">
-  <img src="images/PuntaRobot.jpeg" alt="PuntaRobot" width="450">
-</p>
+tambien se presentan las imagenes del electroiman utilizado :
 
 <p align="center">
-  <img src="images/PuntaRobot2.jpeg" alt="Rutina R3" width="450">
+  <img src="images/ImanSuperior.jpeg" alt="ImanSuperior" width="450">
+  <img src="images/ImanLateral.jpeg" alt="ImanLateral" width="450">
 </p>
+
+Tambien el diseño se inspiro en otra herramienta previamente instalada en el robot para el diseño de la primera parte atornillada : 
+
+
+<p align="center">
+  <img src="images/PuntaRobot.jpeg" alt="PuntaRobot" width="450">
+  <img src="images/PuntaRobot2.jpeg" alt="PuntaRobot" width="450">
+</p>
+
+
+Observando el diseño se opto por relizar un ensamblaje de dos partes, una fija a la punta del robot atornillada a este con un orificio en la punta por donde se acoplaria la otra parte por rosca y pasaria el cable del elctroiman conectado a su cricuito de cntrol por dentro del tornillo sin fin aprovechando el vacio de este, dse realiza a dos partes para facilitar el ensablaje rapido de este y agilizar tiempos de desacople y acople  en realizaciones futuras por posibles fallos y demas  
+
+
+
+
+
+
 
 
 
