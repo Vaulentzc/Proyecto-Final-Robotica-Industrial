@@ -58,7 +58,7 @@ A continuación se documenta el proceso cronológico de diseño, simulación, fa
 * **Acondicionamiento del Almacén Ordenado:**
   * Se realizó la búsqueda y selección de la caja/almacén físico adecuado para disponer los componentes. Fue necesario conseguir una estructura con compartimentos adecuados en espaciado y profundidad para asegurar que el efector final pudiera ingresar sin colisiones y mantener una alta repetibilidad en el *pick*.
 
-![Foto de la caja](images/)
+![Foto de la caja](images/cajamontaje.jpg)
 
 > **[Agregen mas info]:** *Agregar especificaciones del material del gripper (impresión 3D PLA/PETG) y dimensiones exactas de la caja/almacén utilizada.*
 
