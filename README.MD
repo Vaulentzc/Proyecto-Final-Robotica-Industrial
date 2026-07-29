@@ -433,7 +433,7 @@ Observando el diseño, se optó por realizar un ensamblaje de dos partes: una fi
 A continuación se muestran imágenes de las partes del ensamblaje de Inventor con su respectivo modelado del electroimán y las dos partes de acople por rosca; de igual forma, se muestra el ensamblaje final 
 
 <p  align="center">
-  <img src="images/Iman.png" alt="Iman.png" width="450" style="border: none !important; box-shadow: none !important;">
+  <img src="images/Iman.png" alt="Iman.png" width="250" style="border: none !important; box-shadow: none !important;">
   <img src="images/MachoTornillo.png" alt="MachoTornillo.png" width="450" style="border: none !important; box-shadow: none !important;">
 </p>
 
