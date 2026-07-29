@@ -207,13 +207,13 @@ Se diseño el gripper para los componentes electronicos en torno a un sistema el
 | **P34/25** | 34 mm | 25 mm | 20.0 – 25.0 kg (200–250 N) | ~5 W | ~0.42 A | M4 / M5 |
 | **P40/20** | 40 mm | 20 mm | 25.0 – 30.0 kg (250–300 N) | ~8 W | ~0.67 A | M5 |
 
-con base a sus caracteristicas fisicas y a una herramienta previamente enseñada como inspiraciòn se procedio a hacer el soporte de dicho electroiman, a continuacón se presenta dicho gripper encontrado en el robot :
+Con base a sus caracteristicas fisicas y a una herramienta previamente enseñada como inspiraciòn se procedio a hacer el soporte de dicho electroiman, a continuacón se presenta dicho gripper encontrado en el robot :
 
 <p align="center">
   <img src="images/InspiraciònHerramienta.jpeg" alt="InspiraciònHerramienta" width="450">
 </p>
 
-tambien se presentan las imagenes del electroiman utilizado :
+Tambien se presentan las imagenes del electroiman utilizado :
 
 
 <p  align="center">
@@ -223,7 +223,7 @@ tambien se presentan las imagenes del electroiman utilizado :
 
 
 
-Tambien el diseño se inspiro en otra herramienta previamente instalada en el robot para el diseño de la primera parte atornillada : 
+El diseño se inspiro de igual forma en otra herramienta previamente instalada en el robot para el diseño de la primera parte atornillada : 
 
 
 <p  align="center">
@@ -237,7 +237,9 @@ Tambien el diseño se inspiro en otra herramienta previamente instalada en el ro
 </p>
 
 
-Observando el diseño se opto por relizar un ensamblaje de dos partes, una fija a la punta del robot atornillada a este con un orificio en la punta por donde se acoplaria la otra parte por rosca y pasaria el cable del elctroiman conectado a su cricuito de cntrol por dentro del tornillo sin fin aprovechando el vacio de este, se realiza a dos partes para facilitar el ensablaje rapido de este y agilizar tiempos de desacople y acople  en realizaciones futuras por posibles fallos y demas  
+Observando el diseño, se optó por realizar un ensamblaje de dos partes: una fija a la punta del robot atornillada a este, con un orificio en la punta por donde se acoplaría la otra parte por rosca y pasaría el cable del electroimán conectado a su circuito de control por dentro del tornillo sin fin aprovechando su espacio hueco. Se realiza en dos partes para facilitar el ensamblaje rápido de este, y así agilizar tiempos de desacople y acople en realizaciones futuras por posibles fallos, entre otros motivos.
+
+A continuación se muestran imágenes de las partes del ensamblaje de Inventor con su respectivo modelado del electroimán y las dos partes de acople por rosca; de igual forma, se muestra el ensamblaje final y su manufactura en impresión 3D ya atornillada al robot.
 
 
 
