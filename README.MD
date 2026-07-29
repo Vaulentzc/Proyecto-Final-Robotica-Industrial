@@ -277,7 +277,9 @@ Posteriormente se ajustó la altura de seguridad utilizada durante los desplazam
 
 Una vez calibradas las posiciones, se realizaron pruebas repetitivas para optimizar la recogida y liberación de los componentes mediante el electroimán.
 
-Se ajustó la altura final de aproximación para maximizar el contacto entre el electroimán y la superficie metálica de cada componente, incrementando así la fuerza efectiva de sujeción y reduciendo la probabilidad de desprendimiento durante el transporte.
+Se añadió físicamente a la caja una capa de icopor, esto para aprovechar mejor el posicionamiento del robot y añadir tolerancia de movimiento, pues el icopor amortigua el contacto y a la vez sostiene los elementos correctamente.
+
+Se ajustó la altura final de aproximación para maximizar el contacto entre el electroimán y la superficie metálica de cada componente, incrementando así la fuerza efectiva de sujeción y reduciendo la probabilidad de desprendimiento durante el transporte, también se usaron diferentes alturas de recogida por la diferencia entre cada elemento.
 
 Adicionalmente, se incorporaron tiempos de espera (`Wait`) en distintos puntos de la secuencia de movimiento. Aunque estos retardos aumentan ligeramente el tiempo total del ciclo, permiten que el robot complete cada movimiento antes de ejecutar la siguiente acción, mejorando la estabilidad del proceso y reduciendo errores ocasionados por pequeñas oscilaciones o tiempos de respuesta del sistema.
 
@@ -494,7 +496,7 @@ Gestión del efector final (electroimán) a través de salidas digitales del con
 ## 6. Comparación manual vs automatizado
 ## 7. Descripción detallada de la solución
 
-## diseño HMI
+## Diseño HMI
 
 La interfaz HMI desarrollada para la estación de ensamblaje con el robot Epson T3 401S fue diseñada con el objetivo de facilitar la operación y supervisión del proceso de ensamblaje de componentes sobre la PCB.
 
