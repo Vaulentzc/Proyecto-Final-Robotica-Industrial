@@ -34,15 +34,15 @@
 # Índice
 
 1. [Bitácora del desarrollo](#1-bitácora-del-desarrollo)
-2. [Diagrama de flujo del proceso global](#diagrama-de-flujo-del-proceso-global)
-3. [Diseño del gripper](#diseño-del-gripper)
-4. [Simulación](#simulacion)
-5. [Código fuente](#codigo-fuente)
-6. [Comparación manual vs automatizado](#comparacion-manual-vs-automatizado)
-7. [Descripción detallada de la solución](#descripcion-detallada-de-la-solución)
-8. [Diagrama de flujo acciones del robot](#diagrama-de-flujo-acciones-del-robot)
-9. [Plano de planta](#plano-de-planta)
-10. [Videos demostrativos](#videos-demostrativos)
+2. [Diagrama de flujo del proceso global](#2-diagrama-de-flujo-del-proceso-global)
+3. [Diseño del gripper](#3-diseño-del-gripper)
+4. [Simulación](#4-simulación)
+5. [Código fuente](#5-código-fuente)
+6. [Comparación manual vs automatizado](#6-comparación-manual-vs-automatizado)
+7. [Descripción detallada de la solución](#7-descripción-detallada-de-la-solución)
+8. [Diagrama de flujo acciones del robot](#8-diagrama-de-flujo-acciones-del-robot)
+9. [Plano de planta](#9-plano-de-planta)
+10. [Videos demostrativos](#10-videos-demostrativos)
 
 ## 1. Bitácora del desarrollo
 
