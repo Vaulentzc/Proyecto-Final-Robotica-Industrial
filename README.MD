@@ -261,22 +261,44 @@ Los resultados obtenidos en esta fase evidenciaron la importancia de considerar 
 
 ### Fase 4: Pruebas en Laboratorio y Calibración de Trabajo (Iterativas)
 
-Debido a las variaciones entre el modelo virtual y el montaje real, se realizaron múltiples visitas al laboratorio para ajustar los parámetros de precisión:
+Una vez validado el funcionamiento del programa en el entorno de simulación, se procedió a realizar la implementación sobre el robot físico. En esta etapa se evidenciaron diferencias importantes entre el modelo virtual y el sistema real, por lo que fue necesario realizar múltiples sesiones de prueba y calibración para garantizar un funcionamiento estable.
 
-* **Visita 1 - Calibración de Puntos y Frames:**
-  * Definición manual de los puntos origen y ejes ($X, Y$) para `Pallet 1` (Caja almacén) y `Pallet 2` (Baquela/PCB) usando el Jog de EPSON RC+.
-  * Ajuste de altura de seguridad $Z$ para evitar choques con las paredes de la caja de componentes.
-* **Visita 2 - Ajuste de Agarre Electromagnético:**
-  * Pruebas de campo para verificar la atracción y liberación de las borneras/componentes metálicos.
-  * **Problema detectado:** La remanencia magnética causaba que algunos componentes no se soltaran inmediatamente al apagar el electroimán.
-  * **Solución aplicada:** Ajuste de tiempos de espera (`Wait 1`) en las subrutinas `Tomar` y `Soltar` para dar estabilidad al proceso.
-* **Visita 3 - Calibración Fine-Tuning y Pruebas de Repetibilidad:**
-  * Corrección milimétrica de las coordenadas de la baquela para asegurar que las terminales de los componentes alinearan correctamente con los orificios de la PCB.
-  * Verificación del ciclo completo a velocidad real (`Speed 100`, `Accel 100 100`).
+A diferencia de la simulación, en el montaje físico intervienen factores como las tolerancias mecánicas, pequeñas desviaciones en la ubicación de los componentes, variaciones en la herramienta de agarre y tiempos de respuesta de los actuadores, los cuales afectan directamente la precisión del proceso de ensamblaje.
 
-> **[Agregen mas info aquí]:** *Agregar tabla o registro de fallos encontrados durante las pruebas de campo y cómo se corrigieron.*
+#### Calibración del sistema
 
----
+La primera etapa consistió en la calibración del espacio de trabajo del robot. Para ello se definieron manualmente los puntos de referencia utilizados por las mallas de paletizado, verificando que las posiciones calculadas coincidieran con la ubicación real tanto del almacén de componentes como de la zona de ensamblaje.
+
+Durante esta fase también se verificaron las dimensiones físicas del montaje y se realizaron pequeños ajustes sobre las coordenadas de referencia hasta obtener una correspondencia aceptable entre las posiciones programadas y las posiciones reales.
+
+Posteriormente se ajustó la altura de seguridad utilizada durante los desplazamientos del robot. Este parámetro debía ser lo suficientemente elevado para evitar colisiones con los bordes del almacén, la baquela y otros elementos presentes en la estación de trabajo, pero sin incrementar innecesariamente el tiempo de ciclo.
+
+#### Ajuste del proceso de manipulación
+
+Una vez calibradas las posiciones, se realizaron pruebas repetitivas para optimizar la recogida y liberación de los componentes mediante el electroimán.
+
+Se ajustó la altura final de aproximación para maximizar el contacto entre el electroimán y la superficie metálica de cada componente, incrementando así la fuerza efectiva de sujeción y reduciendo la probabilidad de desprendimiento durante el transporte.
+
+Adicionalmente, se incorporaron tiempos de espera (`Wait`) en distintos puntos de la secuencia de movimiento. Aunque estos retardos aumentan ligeramente el tiempo total del ciclo, permiten que el robot complete cada movimiento antes de ejecutar la siguiente acción, mejorando la estabilidad del proceso y reduciendo errores ocasionados por pequeñas oscilaciones o tiempos de respuesta del sistema.
+
+También se realizaron ajustes en la velocidad de los movimientos. El objetivo principal fue reducir el tiempo durante el cual el electroimán permanecía energizado, ya que se observó que un funcionamiento prolongado producía un calentamiento considerable de la bobina.
+
+Este aumento de temperatura ocasionaba una disminución gradual de la fuerza magnética disponible, haciendo más probable que el componente se desprendiera durante el transporte. Como consecuencia, fue necesario encontrar un compromiso entre velocidad de desplazamiento, precisión del robot y tiempo máximo de activación del electroimán.
+
+#### Resultados y dificultades encontradas
+
+Durante las pruebas experimentales también se observó que el comportamiento del sistema dependía considerablemente del tipo de componente manipulado.
+
+Las piezas con mayor superficie metálica presentaban un agarre más estable, mientras que componentes pequeños o con menor área de contacto requerían una alineación mucho más precisa para ser levantados correctamente.
+
+Otro aspecto importante identificado durante la experimentación fue la pérdida de orientación de varios componentes durante la fase de recogida y transporte. Aunque el electroimán proporciona un punto de agarre más localizado que una ventosa de vacío, la fuerza magnética no restringe completamente la rotación de la pieza, por lo que pequeños impactos o vibraciones podían modificar su orientación.
+
+Esta situación resultó especialmente crítica al intentar depositar los componentes directamente sobre una PCB, ya que incluso pequeñas variaciones angulares impedían que las piezas coincidieran correctamente con su posición de montaje.
+
+Como resultado de estas pruebas, se decidió utilizar una superficie de depósito plana durante la validación experimental en lugar de realizar el ensamblaje directamente sobre la tarjeta electrónica. Esta decisión permitió evaluar el funcionamiento general del sistema sin introducir errores adicionales asociados a la orientación de los componentes.
+
+Finalmente, las pruebas permitieron identificar las principales limitaciones del efector final basado en un electroimán. Si bien la herramienta demostró ser adecuada para la manipulación automática de componentes electrónicos, la pérdida progresiva de fuerza debido al calentamiento y la dificultad para garantizar una orientación constante representan aspectos que deberán abordarse en futuras iteraciones del diseño.
+
 
 ### Evidencias del Desarrollo
 
