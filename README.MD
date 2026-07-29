@@ -241,6 +241,7 @@ La utilización de procedimientos independientes para esta tarea permite desacop
 ![Video de la simulación con interfaz](https://drive.google.com/file/d/1CKHcbSbyM-2wsqahP0qlyPA7baEbvKEz/view?usp=drive_link)
 
 ![Resultado de los componentes en la baquela de simulación](images/componentes-en-baquela-simu.jpeg)
+
 ---
 
 ### Fase 3: Integración Hardware y Control Eléctrico
