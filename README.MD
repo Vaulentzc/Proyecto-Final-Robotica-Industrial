@@ -50,9 +50,9 @@ A continuación se documenta el proceso cronológico de diseño, simulación, fa
 
 ---
 
-# Fase 1: Definición de Requerimientos y Diseño Mecánico
+### Fase 1: Definición de Requerimientos y Diseño Mecánico
 
-## Definición de requerimientos
+#### Definición de requerimientos
 
 El objetivo principal de la herramienta es permitir la manipulación automática de componentes electrónicos mediante un brazo robótico, siendo capaz de recoger una pieza desde una ubicación determinada y depositarla en otra con la mayor precisión posible. Debido a que la aplicación está orientada al manejo de componentes para PCB, resulta especialmente importante mantener la orientación de la pieza durante todo el proceso, ya que una rotación indeseada dificultaría o impediría su colocación correcta.
 
@@ -68,7 +68,7 @@ Con estos criterios se evaluaron distintas alternativas para la herramienta de a
 
 ---
 
-## Alternativa 1: Ventosa de vacío
+#### Alternativa 1: Ventosa de vacío
 
 La primera opción considerada fue una **ventosa de vacío**, accionada mediante un sistema electroneumático. Esta alternativa presentaba la ventaja de que el laboratorio ya disponía de una herramienta funcional, reduciendo considerablemente el tiempo de diseño y fabricación.
 
@@ -91,7 +91,7 @@ Por estas razones, aunque la ventosa constituye una solución robusta para tarea
 
 ---
 
-## Alternativa 2: Electroimán
+#### Alternativa 2: Electroimán
 
 La segunda alternativa consistió en diseñar una herramienta basada en un **electroimán**.
 
@@ -118,7 +118,7 @@ A pesar de estas limitaciones, las ventajas relacionadas con la precisión y el 
 
 ---
 
-## Selección de la herramienta
+#### Selección de la herramienta
 
 Después de analizar ambas opciones se decidió implementar el **electroimán** como herramienta principal del brazo robótico.
 
@@ -128,7 +128,7 @@ La selección del electroimán también hizo necesario diseñar un sistema de al
 
 ---
 
-## Diseño del almacén de componentes
+#### Diseño del almacén de componentes
 
 Como complemento de la herramienta se diseñó una caja de almacenamiento que permite organizar los componentes electrónicos antes de ser manipulados.
 
