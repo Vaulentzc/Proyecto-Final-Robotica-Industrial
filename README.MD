@@ -264,7 +264,7 @@ Los resultados obtenidos en esta fase evidenciaron la importancia de considerar 
 Una vez validado el funcionamiento del programa en el entorno de simulación, se procedió a realizar la implementación sobre el robot físico. En esta etapa se evidenciaron diferencias importantes entre el modelo virtual y el sistema real, por lo que fue necesario realizar múltiples sesiones de prueba y calibración para garantizar un funcionamiento estable.
 
 A diferencia de la simulación, en el montaje físico intervienen factores como las tolerancias mecánicas, pequeñas desviaciones en la ubicación de los componentes, variaciones en la herramienta de agarre y tiempos de respuesta de los actuadores, los cuales afectan directamente la precisión del proceso de ensamblaje.
-
+![Ajuste de herramienta](images/Ajusteherramienta.jpg)
 #### Calibración del sistema
 
 La primera etapa consistió en la calibración del espacio de trabajo del robot. Para ello se definieron manualmente los puntos de referencia utilizados por las mallas de paletizado, verificando que las posiciones calculadas coincidieran con la ubicación real tanto del almacén de componentes como de la zona de ensamblaje.
@@ -284,7 +284,7 @@ Adicionalmente, se incorporaron tiempos de espera (`Wait`) en distintos puntos d
 También se realizaron ajustes en la velocidad de los movimientos. El objetivo principal fue reducir el tiempo durante el cual el electroimán permanecía energizado, ya que se observó que un funcionamiento prolongado producía un calentamiento considerable de la bobina.
 
 Este aumento de temperatura ocasionaba una disminución gradual de la fuerza magnética disponible, haciendo más probable que el componente se desprendiera durante el transporte. Como consecuencia, fue necesario encontrar un compromiso entre velocidad de desplazamiento, precisión del robot y tiempo máximo de activación del electroimán.
-
+![Pruebas de manipulación](images/PruebaPosicion.jpg)
 #### Resultados y dificultades encontradas
 
 Durante las pruebas experimentales también se observó que el comportamiento del sistema dependía considerablemente del tipo de componente manipulado.
