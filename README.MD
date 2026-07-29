@@ -67,15 +67,14 @@ A continuación se documenta el proceso cronológico de diseño, simulación, fa
 
 ### Fase 3: Integración Hardware y Control Eléctrico
 
+Para esta fase se buscó ayuda del profesor para realizar la instalación de la herramienta, debido al consumo alto de corriente de la herramienta se hizo uso de dos fuentes externas y un módulo relé para que el robot pudiese enviar las señales de ON/OFF, posteriormente se hicieron pruebas de funcionamiento
 * **Ensamble Mecánico y Eléctrico:**
-  * Montaje de la herramienta en el robot real.
+  * Montaje de la herramienta en el robot real.e
   * Conexión del relé de activación del electroimán al módulo de salidas digitales del controlador Epson (asignado a la salida `DO_09`).
 * **Protección ESD y Seguridad:**
   * Implementación de precauciones antiestáticas en la zona de trabajo para evitar daños en los componentes electrónicos durante la manipulación.
 A continuación se presenta el diagrama de conexiones físico del sistema completo:
 ![Foto Plano de Planta](images/Diagramacableado.png)
-
-> **[Agregen info del electroimán]:** *Añadir esquema de conexión eléctrica del relé/electroimán a la tarjeta I/O del Epson.*
 
 ---
 
