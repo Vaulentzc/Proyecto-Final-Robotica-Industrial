@@ -674,6 +674,9 @@ flowchart TD
 ```
 
 ## 9. Plano de planta
+
+Se eseña el plano de planta del robot y la posición del almacen y la pcb 
+
 ![Foto Plano de Planta](images/PlantaPcb.png)
 
 
@@ -691,7 +694,7 @@ A continuación se muestran los videos de la implementación fisica final
 
 <p align="center">
   <a href="https://drive.google.com/file/d/1OsyPAgnnxUSs0Gmu0NFNt79tbQhQKWB3/view?usp=sharing">
-    <img src="images/Portada Imagen.jpeg" alt="Ver video de Simulación" width="600">
+    <img src="images/Sin pcb.jpeg" alt="Ver video de Simulación" width="600">
   </a>
 </p>
 
@@ -704,7 +707,7 @@ A continuación se muestran los videos de la implementación fisica final
 
 <p align="center">
   <a href="https://drive.google.com/file/d/11vFDaBi6A9irszO2-w8bLBX5rrz4HlgN/view?usp=drive_link">
-    <img src="images/simulacion.png" alt="Ver video en Drive" width="600">
+    <img src="images/Icopor.png" alt="Ver video en Drive" width="600">
   </a>
 </p>
 
@@ -717,7 +720,7 @@ A continuación se muestran los videos de la implementación fisica final
 
 <p align="center">
   <a href=https://drive.google.com/file/d/12U9qxxCNTWIHBtag4S1UQ17y6P2RlNQ5/view?usp=drive_link">
-    <img src="images/simulacion.png" alt="Ver video en Drive" width="600">
+    <img src="images/Icopor.png" alt="Ver video en Drive" width="600">
   </a>
 </p>
 
