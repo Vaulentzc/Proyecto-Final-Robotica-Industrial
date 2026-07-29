@@ -676,4 +676,48 @@ flowchart TD
 
 
 ## 10. Videos demostrativos
-Los videos demostrativos estan subidos en este repositorio en la carpeta de ```videos```
+
+A continuación se muestran los videos de la implementación fisica final 
+
+
+<p align="center">
+  <b>
+    Video de implentación Final fisica 1 (Prueba sin pcb , velocidad X2)
+      
+  </b><br>
+</p>
+
+<p align="center">
+  <a href="https://drive.google.com/file/d/1OsyPAgnnxUSs0Gmu0NFNt79tbQhQKWB3/view?usp=sharing">
+    <img src="images/Portada Imagen.jpeg" alt="Ver video de Simulación" width="600">
+  </a>
+</p>
+
+<p align="center">
+  <b>
+    Video de implentación Final fisica 1 (Prueba con pcb deja cristales sin coger por error de posición , velocidad X2)
+      
+  </b><br>
+</p>
+
+<p align="center">
+  <a href="https://drive.google.com/file/d/11vFDaBi6A9irszO2-w8bLBX5rrz4HlgN/view?usp=drive_link">
+    <img src="images/simulacion.png" alt="Ver video en Drive" width="600">
+  </a>
+</p>
+
+<p align="center">
+  <b>
+    Video de implentación Final fisica 1 (Prueba con pcb deja 3 ultimos componentes sin coger por sobrecalientamiento del electroiman y perdidas de sus propiedades , velocidad X2)
+      
+  </b><br>
+</p>
+
+<p align="center">
+  <a href=https://drive.google.com/file/d/12U9qxxCNTWIHBtag4S1UQ17y6P2RlNQ5/view?usp=drive_link">
+    <img src="images/simulacion.png" alt="Ver video en Drive" width="600">
+  </a>
+</p>
+
+
+
