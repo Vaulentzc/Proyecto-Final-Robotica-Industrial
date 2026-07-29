@@ -575,7 +575,7 @@ flowchart TD
 ```
 
 ## 9. Plano de planta
-![Foto Plano de Planta](images/almacen.png)
+![Foto Plano de Planta](images/PlantaPcb.png)
 
 
 ## 10. Videos demostrativos
