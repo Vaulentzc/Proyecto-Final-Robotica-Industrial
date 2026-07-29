@@ -251,6 +251,14 @@ A continuación se muestran imágenes de las partes del ensamblaje de Inventor c
 
 Se presenta tambien su manufactura en impresión 3D ya atornillada a la punta del robot como su versión final y despegado de este para ver la sección interna y su cable  :
 
+<p  align="center">
+  <img src="images/Atornillado.jpeg" alt="Atornillado" width="450" style="border: none !important; box-shadow: none !important;">
+  <img src="images/RobotCompleto.jpeg" alt="RobotCompleto" width="450" style="border: none !important; box-shadow: none !important;">
+</p>
+
+<p align="center">
+  <img src="images/Noensamblado.jpeg" alt="Noensamblado" width="450">
+</p>
 
 
 
