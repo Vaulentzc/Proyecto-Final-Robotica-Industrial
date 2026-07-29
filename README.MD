@@ -493,9 +493,102 @@ Gestión del efector final (electroimán) a través de salidas digitales del con
 ```Off DO_09```: Energiza/activa la sujeción electromagnética para tomar el componente.
 ```On DO_09```: Desenergiza la herramienta para liberar el componente sobre la PCB.
 
+
 ## 6. Comparación manual vs automatizado
+
+Con el fin de evaluar el impacto de la solución desarrollada, se realizó una comparación entre el proceso de ensamblaje manual de componentes y el proceso automatizado implementado mediante el robot **EPSON T3-401S** equipado con un efector final electromagnético.
+
+Aunque el sistema desarrollado corresponde a un prototipo de laboratorio y no a una línea de producción industrial completamente optimizada, permitió identificar las principales ventajas y limitaciones de la automatización para este tipo de tareas.
+
+| Aspecto | Ensamblaje manual | Ensamblaje automatizado |
+|---------|-------------------|-------------------------|
+| Repetibilidad | Depende del operador y puede variar entre ciclos. | Alta repetibilidad una vez calibrado el sistema. |
+| Precisión de posicionamiento | Depende de la habilidad del operario. | Determinada por la precisión del robot y la correcta calibración de las posiciones. |
+| Fatiga del operador | Aumenta con el tiempo y puede generar errores. | No existe fatiga durante la operación automática. |
+| Flexibilidad | Permite reaccionar fácilmente ante componentes mal ubicados. | Requiere recalibración o reprogramación para cambios importantes en la disposición de las piezas. |
+| Tiempo de operación | Variable entre operadores. | Constante para cada ciclo de trabajo. |
+| Riesgo de errores humanos | Alto en tareas repetitivas. | Bajo, dependiendo de la correcta programación y calibración del sistema. |
+| Costos iniciales | Bajos. | Elevados debido al robot, controlador y herramienta especializada. |
+| Producción continua | Limitada por el operador. | Puede operar continuamente dentro de las limitaciones del sistema. |
+
+### Análisis de resultados
+
+Durante las pruebas realizadas se observó que el robot ejecuta la misma trayectoria en cada ciclo con una elevada repetibilidad, una de las principales ventajas frente al ensamblaje manual. Una vez calibradas las posiciones del almacén y de la zona de trabajo, el sistema fue capaz de repetir la secuencia de recogida y depósito sin intervención del operador.
+
+Sin embargo, también se identificaron limitaciones asociadas principalmente al efector final. A diferencia de un gripper mecánico, el electroimán no restringe completamente la orientación del componente, por lo que pequeñas vibraciones durante el transporte pueden producir ligeras rotaciones que dificultan su colocación exacta sobre la PCB.
+
+Adicionalmente, el calentamiento de la bobina durante periodos prolongados de funcionamiento reduce progresivamente la fuerza magnética disponible, disminuyendo la confiabilidad del agarre en ciclos continuos. Este comportamiento únicamente pudo observarse durante las pruebas experimentales y no fue evidente en la etapa de simulación.
+
+En términos generales, el proyecto permitió demostrar que la automatización mejora significativamente la repetibilidad del proceso y reduce la dependencia del operador, aunque el desempeño final continúa estando condicionado por el diseño del efector final y las características de los componentes manipulados.
 ## 7. Descripción detallada de la solución
 
+La solución desarrollada corresponde a una estación automatizada para el ensamblaje de componentes electrónicos utilizando un robot **EPSON T3-401S (Junior)** equipado con un efector final basado en un electroimán. Esta estación constituye la segunda etapa de una línea automatizada de manufactura de tarjetas electrónicas (PCB) y tiene como objetivo recoger componentes previamente organizados en un almacén y posicionarlos automáticamente en las ubicaciones definidas sobre la tarjeta.
+
+### Arquitectura del sistema
+
+La estación está conformada por cuatro subsistemas principales:
+
+- **Robot industrial EPSON T3-401S**, encargado de realizar los movimientos de manipulación.
+- **Efector final electromagnético**, diseñado e impreso en 3D para sujetar componentes metálicos.
+- **Sistema de alimentación y control eléctrico**, compuesto por dos fuentes externas y un módulo relé que permite controlar el electroimán desde las salidas digitales del robot.
+- **Software desarrollado en EPSON RC+ mediante SPEL+**, responsable de coordinar toda la secuencia automática de ensamblaje.
+
+La integración de estos subsistemas permite ejecutar de forma automática el proceso completo de **Pick & Place**, desde la recogida del componente hasta su deposición en la posición correspondiente de la PCB.
+
+### Funcionamiento del proceso
+
+El ciclo automático inicia con el robot ubicado en la posición **Home**, donde se habilitan los motores y se configuran los parámetros de velocidad, aceleración y potencia.
+
+Posteriormente se cargan las posiciones de los componentes mediante dos arreglos:
+
+- **alm(i):** almacena la posición de cada componente dentro del almacén.
+- **baq(i):** almacena la posición destino correspondiente sobre la PCB.
+
+Una vez cargada la información, el robot ejecuta un ciclo repetitivo para cada componente:
+
+1. Desplazamiento mediante una trayectoria tipo **Jump** hasta el almacén.
+2. Descenso a la altura de captura.
+3. Activación del electroimán mediante la salida digital **DO_09**.
+4. Elevación del componente.
+5. Desplazamiento hacia la posición correspondiente en la PCB.
+6. Descenso hasta la altura de colocación.
+7. Desactivación del electroimán para liberar la pieza.
+8. Retorno a una altura segura para iniciar el siguiente ciclo.
+
+Al finalizar el ensamblaje de todos los componentes, el robot retorna nuevamente a la posición **Home**, concluyendo el proceso automático.
+
+### Organización del espacio de trabajo
+
+Con el fin de simplificar la programación, las posiciones del almacén y de la tarjeta electrónica fueron definidas mediante las herramientas de **Pallet** disponibles en EPSON RC+.
+
+Se configuraron dos mallas independientes:
+
+- **Pallet 1:** almacén de componentes.
+- **Pallet 2:** posiciones de montaje sobre la PCB.
+
+Esta estrategia permite modificar la distribución física de las piezas sin alterar la lógica principal del programa, ya que únicamente es necesario actualizar los puntos de referencia de cada malla.
+
+### Sistema de agarre
+
+La herramienta de manipulación consiste en un electroimán montado sobre un soporte diseñado en Autodesk Inventor e impreso mediante manufactura aditiva.
+
+El soporte está conformado por dos piezas ensambladas mediante una unión roscada, lo que facilita el montaje, mantenimiento y reemplazo de la herramienta. Además, el diseño permite conducir el cableado del electroimán por el interior del soporte hasta el circuito de control, mejorando la protección mecánica y el acabado del conjunto.
+
+El accionamiento del electroimán se realiza mediante un módulo relé controlado por una salida digital del robot, mientras que la alimentación eléctrica es suministrada por fuentes externas debido a que la corriente requerida supera la capacidad del controlador del robot.
+
+### Interfaz de operación
+
+Con el propósito de facilitar la interacción con la estación se desarrolló una interfaz HMI utilizando el **GUI Builder** de EPSON RC+.
+
+Desde esta interfaz el operador puede iniciar o detener el ciclo automático, enviar el robot a la posición Home, reiniciar el sistema después de una falla y supervisar el estado del proceso mediante indicadores que muestran el componente procesado, el avance del ensamblaje y los posibles mensajes de alarma.
+
+### Integración y validación
+
+La implementación experimental permitió validar el funcionamiento conjunto del sistema mecánico, eléctrico y de control.
+
+Durante las pruebas fue necesario calibrar las posiciones del almacén, ajustar diferentes alturas de aproximación para cada componente e incorporar tiempos de espera que mejoraron la estabilidad del proceso. Asimismo, se comprobó que el calentamiento progresivo del electroimán disminuye la fuerza de sujeción disponible, representando la principal limitación del sistema desarrollado.
+
+En conjunto, la solución implementada demuestra la viabilidad de automatizar el proceso de ensamblaje de componentes electrónicos mediante un robot SCARA, integrando diseño mecánico, control eléctrico, programación industrial e interfaz de supervisión en una única estación de trabajo.
 ## Diseño HMI
 
 La interfaz HMI desarrollada para la estación de ensamblaje con el robot Epson T3 401S fue diseñada con el objetivo de facilitar la operación y supervisión del proceso de ensamblaje de componentes sobre la PCB.
