@@ -148,12 +148,95 @@ Con el diseño mecánico de la herramienta y del sistema de almacenamiento defin
 ---
 
 ### Fase 2: Programación Inicial y Simulación (EPSON RC+)
+#### Desarrollo de código SPEL
 
-* **Desarrollo del Código SPEL+:**
-  * Implementación de la rutina lógica principal (`main`) y declaración de matrices globales para el mapeo de posiciones de origen (`alm`) y destino (`baq`).
-  * Configuración de mallas de paletizado mediante las funciones `Pallet 1` (Almacén) y `Pallet 2` (Baquela).
-* **Simulación Virtual:**
-  * Verificación preliminar de trayectorias tipo `Jump` dentro del entorno virtual de **EPSON RC+** para garantizar que la elevación en $Z$ fuera suficiente para esquivar bordes de la caja y elementos sobre la PCB.
+Una vez definido el diseño mecánico de la herramienta, se desarrolló el programa de control utilizando el lenguaje **SPEL+** dentro del entorno **EPSON RC+**. El objetivo del software fue automatizar la secuencia completa de ensamblaje, desde la recogida de cada componente en el almacén hasta su colocación en la posición correspondiente de la baquela.
+
+La implementación se estructuró en funciones independientes, permitiendo separar la configuración inicial, la definición de posiciones, la lógica de ensamblaje y el control del efector final. Esta organización facilita el mantenimiento del código y permite modificar cada parte del proceso sin afectar el funcionamiento general del programa.
+
+##### Inicialización del robot
+
+La rutina principal (`main`) es la encargada de preparar el robot antes de iniciar el proceso de ensamblaje. En esta etapa se realizan las siguientes acciones:
+
+- Encendido de los motores.
+- Configuración de potencia, aceleración y velocidad de trabajo.
+- Retorno a la posición de referencia (*Home*).
+- Carga de la información correspondiente a los componentes.
+- Ejecución de la rutina principal de ensamblaje.
+- Regreso a la posición de inicio una vez finalizado el proceso.
+
+Esta estructura garantiza que el robot siempre comience y termine el ciclo desde una posición conocida y segura.
+
+---
+
+##### Organización de las posiciones
+
+Para evitar programar manualmente cada movimiento del robot, se utilizaron dos arreglos globales:
+
+- `alm(i)`: almacena la posición del componente dentro del almacén.
+- `baq(i)`: almacena la posición destino sobre la baquela.
+
+Cada índice representa un componente específico, de modo que ambos arreglos establecen una correspondencia directa entre el punto de recogida y el punto donde debe colocarse.
+
+Por ejemplo, el componente almacenado en `alm(4)` será depositado automáticamente en la posición indicada por `baq(4)`.
+
+Este método permite modificar la distribución física de los componentes simplemente cambiando los índices almacenados en las matrices, sin necesidad de alterar la lógica principal del programa.
+
+---
+
+##### Configuración automática mediante Pallet
+
+En lugar de enseñar individualmente cada una de las posiciones del almacén y de la baquela, se utilizaron las herramientas de **paletizado** incluidas en EPSON RC+.
+
+Se definieron dos mallas de trabajo:
+
+- **Pallet 1:** almacén de componentes, organizado en una matriz de **6 × 6** posiciones.
+- **Pallet 2:** baquela, organizada en una matriz de **27 × 22** posiciones.
+
+Cada malla se genera automáticamente a partir de un punto de origen y dos vectores de referencia, permitiendo acceder a cualquier posición mediante un único índice.
+
+Esta estrategia simplifica considerablemente la programación y facilita futuras modificaciones en la distribución de los componentes.
+
+---
+
+##### Secuencia de ensamblaje
+
+La rutina `EnsambleComponentes` ejecuta el ciclo completo para cada uno de los componentes definidos.
+
+Para cada elemento se realiza la siguiente secuencia:
+
+1. Desplazamiento sobre la posición del componente en el almacén.
+2. Descenso hasta la altura de recogida.
+3. Activación del electroimán.
+4. Asociación del componente CAD con la herramienta durante la simulación.
+5. Elevación del componente.
+6. Desplazamiento hasta la posición correspondiente de la baquela.
+7. Descenso hasta la posición de inserción.
+8. Desactivación del electroimán para liberar la pieza.
+9. Fijación del componente en la simulación mediante el modelo CAD.
+10. Elevación del robot para continuar con el siguiente componente.
+
+Esta secuencia se ejecuta dentro de un ciclo `For`, permitiendo ensamblar automáticamente todos los componentes definidos por la variable `NumComponentes`.
+
+---
+
+##### Control del efector final
+
+El accionamiento del electroimán se implementó mediante una salida digital del controlador.
+
+Las funciones `Tomar` y `Soltar` encapsulan esta funcionalidad, permitiendo activar o desactivar el electroimán mediante una única instrucción desde la rutina principal.
+
+Esta separación mejora la legibilidad del programa y facilita futuras modificaciones en caso de reemplazar el efector final por otro tipo de herramienta.
+
+---
+
+##### Integración con la simulación
+
+Con el fin de representar correctamente el proceso dentro del entorno virtual, se implementaron las funciones `PickCAD` y `PlaceCAD`.
+
+Estas funciones utilizan las instrucciones `SimSet` para asociar o liberar el modelo CAD correspondiente a cada componente durante las etapas de recogida y colocación. De esta manera, la simulación reproduce visualmente el comportamiento esperado del sistema sin afectar la lógica utilizada en la implementación real.
+
+La utilización de procedimientos independientes para esta tarea permite desacoplar la simulación del control físico del robot, facilitando tanto las pruebas virtuales como la posterior implementación sobre el equipo real.
 
 > **[Agregen foto de la simulación]:** *Adjuntar captura de pantalla de la simulación en EPSON RC+ con la malla de paletizado generada.*
 
