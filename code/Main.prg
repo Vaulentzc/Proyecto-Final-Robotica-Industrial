@@ -33,7 +33,7 @@ Function CargarComponentes
 
 NumComponentes = 10
 
-' Bornera 1
+' sensor
 
 alm(1) = 2
 
@@ -81,7 +81,7 @@ alm(8) = 21
 
 baq(8) = 557
 
-' sensor
+' Bornera 3
 
 alm(9) = 26
 
