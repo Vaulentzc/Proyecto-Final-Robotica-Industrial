@@ -299,6 +299,8 @@ Esta situación resultó especialmente crítica al intentar depositar los compon
 
 Como resultado de estas pruebas, se decidió utilizar una superficie de depósito plana durante la validación experimental en lugar de realizar el ensamblaje directamente sobre la tarjeta electrónica. Esta decisión permitió evaluar el funcionamiento general del sistema sin introducir errores adicionales asociados a la orientación de los componentes.
 
+También se usó una capa extra compuesta de baquelas recortadas para poder añadir consistencia de posiciones y asi buscar mas precisión de agarre de el electroimán.
+
 Finalmente, las pruebas permitieron identificar las principales limitaciones del efector final basado en un electroimán. Si bien la herramienta demostró ser adecuada para la manipulación automática de componentes electrónicos, la pérdida progresiva de fuerza debido al calentamiento y la dificultad para garantizar una orientación constante representan aspectos que deberán abordarse en futuras iteraciones del diseño.
 
 
