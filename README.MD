@@ -198,6 +198,26 @@ Se diseño el gripper para los componentes electronicos en torno a un sistema el
 
 con base a sus caracteristicas fisicas y a una herramienta previamente enseñada como inspiraciòn se procedio a hacer el soporte de dicho electroiman 
 
+<p align="center">
+  <img src="images/ImanLateral.jpeg" alt="ImanLateral" width="450">
+</p>
+
+<p align="center">
+  <img src="images/ImanSuperior.jpeg" alt="ImanSuperior" width="450">
+</p>
+
+<p align="center">
+  <img src="images/InspiraciònHerramienta.jpeg" alt="InspiraciònHerramienta" width="450">
+</p>
+
+<p align="center">
+  <img src="images/PuntaRobot.jpeg" alt="PuntaRobot" width="450">
+</p>
+
+<p align="center">
+  <img src="images/PuntaRobot2.jpeg" alt="Rutina R3" width="450">
+</p>
+
 
 
 ## 4. Simulación
