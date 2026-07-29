@@ -33,7 +33,7 @@
 
 # Índice
 
-1. [Bitácora del desarrollo](#bitacora-del-desarrollo)
+1. [Bitácora del desarrollo](#1-bitácora-del-desarrollo)
 2. [Diagrama de flujo del proceso global](#diagrama-de-flujo-del-proceso-global)
 3. [Diseño del gripper](#diseño-del-gripper)
 4. [Simulación](#simulacion)
