@@ -72,6 +72,8 @@ A continuación se documenta el proceso cronológico de diseño, simulación, fa
   * Conexión del relé de activación del electroimán al módulo de salidas digitales del controlador Epson (asignado a la salida `DO_09`).
 * **Protección ESD y Seguridad:**
   * Implementación de precauciones antiestáticas en la zona de trabajo para evitar daños en los componentes electrónicos durante la manipulación.
+A continuación se presenta el diagrama de conexiones físico del sistema completo:
+![Foto Plano de Planta](images/Diagramacableado.png)
 
 > **[Agregen info del electroimán]:** *Añadir esquema de conexión eléctrica del relé/electroimán a la tarjeta I/O del Epson.*
 
