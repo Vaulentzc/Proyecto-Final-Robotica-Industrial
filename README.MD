@@ -50,16 +50,99 @@ A continuación se documenta el proceso cronológico de diseño, simulación, fa
 
 ---
 
-### Fase 1: Definición de Requerimientos y Diseño Mecánico
+# Fase 1: Definición de Requerimientos y Diseño Mecánico
 
-* **Definición del Concepto:** Se analizaron los requerimientos técnicos del proyecto para la Etapa 2 de la línea de producción (Pick & Place de componentes sobre la PCB).
-* **Diseño CAD del Gripper (Electroimán):** * Se diseñó el adaptador/Sujetador mecánico para acoplar el electroimán al eje del robot Epson T3 401S en software CAD (SolidWorks/Fusion 360).
-  * Se consideró un diseño liviano para no afectar la dinámica del robot y con tolerancia para alojar el núcleo magnético y el cableado de la señal digital `DO_09`.
-* **Acondicionamiento del Almacén Ordenado:**
-  * Se realizó la búsqueda y selección de la caja/almacén físico adecuado para disponer los componentes. Fue necesario conseguir una estructura con compartimentos adecuados en espaciado y profundidad para asegurar que el efector final pudiera ingresar sin colisiones y mantener una alta repetibilidad en el *pick*.
+## Definición de requerimientos
+
+El objetivo principal de la herramienta es permitir la manipulación automática de componentes electrónicos mediante un brazo robótico, siendo capaz de recoger una pieza desde una ubicación determinada y depositarla en otra con la mayor precisión posible. Debido a que la aplicación está orientada al manejo de componentes para PCB, resulta especialmente importante mantener la orientación de la pieza durante todo el proceso, ya que una rotación indeseada dificultaría o impediría su colocación correcta.
+
+A partir de estos objetivos se definieron los siguientes requerimientos de diseño:
+
+- Ser capaz de levantar componentes electrónicos de diferentes tamaños.
+- Poder activarse y desactivarse mediante una señal de control.
+- Mantener la orientación del componente durante el transporte, en la medida de lo posible.
+- Tener un diseño mecánico sencillo para facilitar tanto su fabricación como su integración con el brazo robótico.
+- Minimizar la complejidad de la simulación y del sistema de control.
+
+Con estos criterios se evaluaron distintas alternativas para la herramienta de agarre.
+
+---
+
+## Alternativa 1: Ventosa de vacío
+
+La primera opción considerada fue una **ventosa de vacío**, accionada mediante un sistema electroneumático. Esta alternativa presentaba la ventaja de que el laboratorio ya disponía de una herramienta funcional, reduciendo considerablemente el tiempo de diseño y fabricación.
+
+![Ventosa](images/Imagenventosa.jpg)
+
+Entre sus principales ventajas se encuentran:
+
+- Diseño ya disponible y probado.
+- Activación sencilla mediante electroválvulas.
+- Integración relativamente simple con el sistema de control.
+- Capacidad de manipular componentes de diferentes materiales.
+
+Sin embargo, durante el análisis se identificaron varias limitaciones importantes para la aplicación propuesta.
+
+La fuerza de succión se distribuye sobre una superficie relativamente amplia, lo que hace que el punto exacto de contacto dependa de la geometría de la pieza. Además, durante el momento en que la ventosa entra en contacto con el componente es frecuente que éste gire o cambie ligeramente de posición antes de quedar completamente adherido.
+
+Como consecuencia, la orientación final del componente resulta poco repetible, lo cual representa una desventaja significativa cuando posteriormente debe colocarse sobre una PCB con una orientación específica.
+
+Por estas razones, aunque la ventosa constituye una solución robusta para tareas generales de manipulación, no se consideró la alternativa más adecuada para este proyecto.
+
+---
+
+## Alternativa 2: Electroimán
+
+La segunda alternativa consistió en diseñar una herramienta basada en un **electroimán**.
+
+Un electroimán funciona aprovechando el fenómeno del **electromagnetismo**: cuando una corriente eléctrica circula por una bobina, se genera un campo magnético capaz de atraer materiales ferromagnéticos. Al interrumpir la corriente, el campo desaparece prácticamente por completo, permitiendo liberar el componente de manera controlada.
+
+![Electroimán](images/Electroimanimg.jpg)
+
+Esta alternativa presentaba varias ventajas frente a la ventosa:
+
+- Activación y desactivación mediante una simple señal eléctrica.
+- Mayor precisión en el punto de contacto.
+- Menor probabilidad de modificar la orientación del componente durante la recogida.
+- Diseño compacto y fácilmente integrable al efector final del robot.
+- Capacidad de sujetar componentes metálicos sin necesidad de generar vacío.
+
+No obstante, también fue necesario considerar algunas desventajas:
+
+- La herramienta debía diseñarse y fabricarse prácticamente desde cero.
+- Requiere una corriente relativamente elevada para generar una fuerza de atracción suficiente.
+- El calentamiento de la bobina produce un aumento de su resistencia eléctrica. Como consecuencia, la corriente disminuye y, con ella, la intensidad del campo magnético generado. Este fenómeno, conocido como **desmagnetización térmica** o **pérdida de fuerza por calentamiento**, provoca una reducción progresiva de la capacidad de sujeción mientras el electroimán permanece energizado.
+- Si los componentes se encuentran demasiado próximos entre sí, el campo magnético puede atraer simultáneamente más de una pieza, por lo que es necesario mantener una separación adecuada durante el almacenamiento.
+
+A pesar de estas limitaciones, las ventajas relacionadas con la precisión y el control de la orientación hicieron que esta alternativa resultara considerablemente más adecuada para los objetivos del proyecto.
+
+---
+
+## Selección de la herramienta
+
+Después de analizar ambas opciones se decidió implementar el **electroimán** como herramienta principal del brazo robótico.
+
+Aunque implicaba un mayor trabajo de diseño y fabricación, esta solución ofrecía un mejor compromiso entre precisión, simplicidad del sistema de control y repetibilidad del proceso de manipulación, aspectos fundamentales para una aplicación orientada al ensamblaje de componentes electrónicos.
+
+La selección del electroimán también hizo necesario diseñar un sistema de almacenamiento para los componentes. Este almacén debía mantener las piezas organizadas, suficientemente separadas para evitar capturas múltiples y con una disposición que facilitara el acceso del brazo robótico.
+
+---
+
+## Diseño del almacén de componentes
+
+Como complemento de la herramienta se diseñó una caja de almacenamiento que permite organizar los componentes electrónicos antes de ser manipulados.
 
 ![Foto de la caja](images/cajamontaje.jpg)
 
+El diseño del almacén busca cumplir varios objetivos:
+
+- Mantener las piezas ordenadas y fácilmente accesibles.
+- Evitar que el campo magnético del electroimán capture más de un componente simultáneamente.
+- Facilitar la identificación de la posición de cada componente durante la operación.
+- Proporcionar una estructura estable para las pruebas experimentales.
+- Permitir futuras ampliaciones del sistema para manejar un mayor número de referencias.
+
+Con el diseño mecánico de la herramienta y del sistema de almacenamiento definidos, fue posible avanzar hacia las etapas de fabricación, caracterización del electroimán e integración con el sistema robótico.
 > **[Agregen mas info]:** *Agregar especificaciones del material del gripper (impresión 3D PLA/PETG) y dimensiones exactas de la caja/almacén utilizada.*
 
 ---
