@@ -311,10 +311,10 @@ Finalmente, las pruebas permitieron identificar las principales limitaciones del
 
 | Hito / Actividad | Descripción | Evidencia Fotográfica / Video |
 | :--- | :--- | :---: |
-| **Diseño CAD Herramienta** | Modelo 3D del soporte para el electroimán. | *(Insertar Imagen CAD)* |
+| **Diseño CAD Herramienta** | Modelo 3D del soporte para el electroimán. | |
 | **Acondicionamiento Almacén** | Caja seleccionada con componentes ordenados. | *![Almacen](images/almacen.png)* |
 | **Calibración en Lab** | Ajuste de puntos de paletizado en el Epson T3. | *![Calibracion](images/calibracion.png)* |
-| **Prueba de Agarre** | Verificación de sujeción electromagnética (`DO_09`). | *(Insertar GIF / Foto Pick)* |
+| **Prueba de Agarre** | Verificación de sujeción electromagnética (`DO_09`). | |
 
 ---
 
