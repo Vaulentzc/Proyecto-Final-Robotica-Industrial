@@ -240,6 +240,7 @@ La utilización de procedimientos independientes para esta tarea permite desacop
 
 > **[Agregen foto de la simulación]:** *Adjuntar captura de pantalla de la simulación en EPSON RC+ con la malla de paletizado generada.*
 
+![Video de la simulación con interfaz](https://drive.google.com/file/d/1CKHcbSbyM-2wsqahP0qlyPA7baEbvKEz/view?usp=drive_link)
 ---
 
 ### Fase 3: Integración Hardware y Control Eléctrico
@@ -257,6 +258,7 @@ Esta disminución de la fuerza de agarre produjo comportamientos diferentes depe
 Los resultados obtenidos en esta fase evidenciaron la importancia de considerar no solo las restricciones cinemáticas y geométricas del sistema, sino también los fenómenos eléctricos y térmicos asociados a la herramienta de manipulación. Estas pruebas permitieron ajustar los parámetros de operación y definir las limitaciones reales del sistema antes de realizar la integración completa del proceso de ensamblaje.
 
 ![Diagrama de cableado](images/Diagramacableado.png)
+
 ---
 
 ### Fase 4: Pruebas en Laboratorio y Calibración de Trabajo (Iterativas)
