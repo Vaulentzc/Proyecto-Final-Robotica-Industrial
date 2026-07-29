@@ -11,6 +11,17 @@
 
 <h2>Profesores: <br>Pedro Fabián Cárdenas Herrera <br> Manuel Felipe Carranza Montenegro<br></h2>
 
+<p>
+  <img alt="EPSON T3-401S" src="https://img.shields.io/badge/Robot-EPSON%20T3--401S-0066CC?logoColor=white">
+  <img alt="EPSON RC+" src="https://img.shields.io/badge/Software-EPSON%20RC%2B%207.5.2-0099CC?logoColor=white">
+  <img alt="SPEL+" src="https://img.shields.io/badge/Lenguaje-SPEL%2B-FF6600?logoColor=white">
+</p>
+
+<br>
+<img src="images/Epson.png" alt="Epson" style="border-radius: 5px; width: 300px;"><br>
+<b>Figura 1. Manipulador industrial EPSON T3-401S.</b>
+</div>
+
 </div>
 
 # Integrantes
